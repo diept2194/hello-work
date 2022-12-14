@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 1</title>
+</head>
+
+<body>
+    <script src="./index.js"></script>
+    <form>
+        <input type="text" id="a" placeholder="Nhập số a">
+        <input type="text" id="b" placeholder="Nhập số b">
+        <input type="button" value="Tổng" onclick="tong()">
+        <p id="kq"></p>
+    </form>
+
+    <script>
+        function tong() {
+            var a = document.getElementById("a").value;
+            var b = document.getElementById("b").value;
+
+            var i = Number(a);
+            var dem = 0;
+            while (i <= Number(b)) {
+                var j = 2;
+                var dem1 = 0;
+                while (j <= i) {
+                    if (i % j == 0) {
+                        dem1++;
+                    }
+                    j++;
+                }
+                if (dem1 == 1) {
+                    dem += i;
+                }
+                i++;
+
+            }
+
+            document.getElementById("kq").innerHTML = "Tổng các số nguyên tố trong khoảng là: " + dem;
+
+        }
+
+    </script>
+</body>
+
+</html>
